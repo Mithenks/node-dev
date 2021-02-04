@@ -1,10 +1,10 @@
 version: "3.4"
 services:
   app:
-    image: node:12-buster-slim
+    image: bmeme/node-dev:14.15.4-buster-slim
     entrypoint: /bin/sleep infinity
     working_dir: /usr/src/app/
     volumes:
       - "../app:/usr/src/app:cached"
     environment:
-      - DNSDOCK_ALIAS=node-dev.bmeme.docker
+      - DNSDOCK_ALIAS=${PROJECT_NAME}.${PROJECT_VENDOR}.docker
